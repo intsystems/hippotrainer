@@ -46,17 +46,21 @@
 
 **HippoTrainer** is a PyTorch-compatible library for gradient-based hyperparameter optimization, implementing cutting-edge algorithms that leverage automatic differentiation to efficiently tune hyperparameters.
 
+## 📬 Assets
+
+1. [Technical Meeting 1 - Presentation](https://github.com/intsystems/hippotrainer/blob/main/assets/presentation.pdf)
+
 ## 🚀 Features
-- **Algorithm Zoo**: T1-T2, Billion Hyperparameters, HOAG, DrMAD
+- **Algorithm Zoo**: T1-T2, IFT, HOAG, DrMAD
 - **PyTorch Native**: Direct integration with `torch.nn.Module`
 - **Memory Efficient**: Checkpointing & implicit differentiation
 - **Scalable**: From laptop to cluster with PyTorch backend
 
 ## 📜 Algorithms
-- [ ] **T1-T2** ([Paper](http://proceedings.mlr.press/v48/luketina16.pdf)): Unrolled optimization with explicit gradient computation
-- [ ] **Billion Hyperparams** ([Paper](http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf)): Large-scale optimization with PyTorch fusion
-- [ ] **HOAG** ([Paper](http://proceedings.mlr.press/v48/pedregosa16.pdf)): Implicit differentiation via conjugate gradient (Daniil Dorin)
-- [ ] **DrMAD** ([Paper](https://arxiv.org/abs/1601.00917)): Memory-efficient piecewise-linear backprop
+- [ ] **T1-T2** ([Paper](http://proceedings.mlr.press/v48/luketina16.pdf)): One-step unrolled optimization
+- [ ] **IFT** ([Paper](http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf)): Leveraging Neumann series approximation for implicit differentiation
+- [ ] **HOAG** ([Paper](http://proceedings.mlr.press/v48/pedregosa16.pdf)): Implicit differentiation via conjugate gradient
+- [ ] **DrMAD** ([Paper](https://arxiv.org/abs/1601.00917)): Memory-efficient piecewise-linear backpropagation
 
 ## 🤝 Contributors
 - [Daniil Dorin](https://github.com/DorinDaniil) (Basic code writing, Final demo, Algorithms)
