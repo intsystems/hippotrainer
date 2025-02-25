@@ -9,7 +9,7 @@ The article "Hyperparameter Optimization with Approximate Gradient" by Fabian Pe
 The primary goal is to optimize hyperparameters $\lambda$ to minimize a cost function $f$, such as cross-validation loss. This cost function depends on model parameters $X(\lambda)$, which are defined implicitly as minimizers of another cost function $h$. The optimization problem is formulated as:
 
 $$
-\arg \min_{\lambda \in D} f(\lambda) = g(X(\lambda), \lambda)
+\arg \min_{\lambda \in D} f(\lambda) = g(X(\lambda), \lambda), \quad D \subseteq \mathbb{R}^s
 $$
 
 subject to
