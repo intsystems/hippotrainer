@@ -49,6 +49,14 @@ The HOAG algorithm guarantees convergence to a stationary point under certain co
 - The sequence of tolerance parameters $\{\epsilon_k\}$ must be summable.
 - The gradient error is bounded by $O(\epsilon_k)$, ensuring that the approximation improves over iterations.
 
+### Assumptions
+
+- $L$-smoothness: The first derivatives of $g$ and the second derivatives of $h$ are Lipschitz continuous functions.
+
+- Nonsingular Hessian: The matrix $\nabla^2_h h$, which corresponds to the Hessian of the inner optimization problem, is invertible at the values $(X(\lambda), \lambda), \lambda \in \mathcal{D}$.
+
+- Convex compact domain: The domain $\mathcal{D}$ under which the hyperparameters are optimized is a convex, non-empty, and compact subset of $\mathbb{R}^s$.
+
 ## Key Formulas
 
 **Gradient of the Cost Function**:
