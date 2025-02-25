@@ -28,9 +28,9 @@ In this project, we are going to implement the following algorithms:
 ## Architecture of the project <a name="architecture"></a>
 
 1. **Core Components**:
-   - `HyperOptimizer`: Base class for all algorithms
+   - `HyperOptimizer`: Base class for all algorithms + `suggest_float()`, `create_study()`, `optimize()`
    - `Hyperparameter`: Differentiable wrapper for hyperparameters
-   - `Checkpointer`: Memory management via gradient checkpointing
+   - `Checkpointer`: Memory management via parameters checkpointing
 
 2. **PyTorch Integration**:
    - Inherit from `torch.nn.Module` for model compatibility
