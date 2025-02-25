@@ -15,7 +15,7 @@ $$
 subject to
 
 $$
-X(\lambda) \in \arg \min_{x \in \mathbb{R}^p} h(x, \lambda)
+X(\lambda) \in \arg \min_{x \in \mathbb{R}^p} h(x, \lambda), \quad \text{inner optimization problem}
 $$
 
 where $D$ is the domain of hyperparameters, and $g$ and $h$ are cost functions.
