@@ -49,6 +49,7 @@
 ## 📬 Assets
 
 1. [Technical Meeting 1 - Presentation](https://github.com/intsystems/hippotrainer/blob/main/assets/presentation.pdf)
+2. [Blog Post](https://kisnikser.github.io/projects/hippotrainer/)
 
 ## 🚀 Features
 - **Algorithm Zoo**: T1-T2, IFT, HOAG, DrMAD
