@@ -24,7 +24,7 @@
     <a href="https://codecov.io/gh/intsystems/hippotrainer">
         <img alt="Coverage" src="https://codecov.io/gh/intsystems/hippotrainer/branch/main/graph/badge.svg">
     </a> -->
-    <a href="https://hippotrainer.readthedocs.io">
+    <a href="https://intsystems.github.io/hippotrainer/">
         <img alt="Docs" src="https://github.com/intsystems/hippotrainer/actions/workflows/docs.yml/badge.svg">
     </a>
 </p>
