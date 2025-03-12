@@ -7,7 +7,8 @@ dependencies = []
 docs = [
     "sphinx>=7.0",
     "furo>=2024.1.29",
-    "sphinx-copybutton>=0.5.2"
+    "sphinx-copybutton>=0.5.2",
+    "myst_parser"
 ]
 
 [build-system]
