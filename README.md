@@ -17,17 +17,17 @@
     </a>
 </p>
 
-<!--- <p align="center">
-    <a href="https://github.com/intsystems/hippotrainer/actions">
+<p align="center">
+<!--     <a href="https://github.com/intsystems/hippotrainer/actions">
         <img alt="Tests" src="https://github.com/intsystems/hippotrainer/actions/workflows/tests.yml/badge.svg">
     </a>
     <a href="https://codecov.io/gh/intsystems/hippotrainer">
         <img alt="Coverage" src="https://codecov.io/gh/intsystems/hippotrainer/branch/main/graph/badge.svg">
-    </a>
+    </a> -->
     <a href="https://hippotrainer.readthedocs.io">
         <img alt="Docs" src="https://github.com/intsystems/hippotrainer/actions/workflows/docs.yml/badge.svg">
     </a>
-</p> -->
+</p>
 
 <p align="center">
     <a href="https://github.com/intsystems/hippotrainer/blob/main/LICENSE">
@@ -49,7 +49,8 @@
 ## 📬 Assets
 
 1. [Technical Meeting 1 - Presentation](https://github.com/intsystems/hippotrainer/blob/main/assets/presentation.pdf)
-2. [Blog Post](https://kisnikser.github.io/projects/hippotrainer/)
+2. [Documentation](https://intsystems.github.io/hippotrainer/)
+3. [Blog Post](https://kisnikser.github.io/projects/hippotrainer/)
 
 ## 🚀 Features
 - **Algorithm Zoo**: T1-T2, IFT, HOAG, DrMAD
