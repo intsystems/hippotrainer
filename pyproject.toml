@@ -1,0 +1,15 @@
+[project]
+name = "HippoTrainer"
+version = "0.1.0"
+dependencies = []
+
+[project.optional-dependencies]
+docs = [
+    "sphinx>=7.0",
+    "furo>=2024.1.29",
+    "sphinx-copybutton>=0.5.2"
+]
+
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
