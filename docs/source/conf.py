@@ -37,5 +37,5 @@ html_theme_options: Dict[str, Any] = {
     ],
     "source_repository": "https://github.com/intsystems/hippotrainer",
     "source_branch": "main",
-    "source_directory": "docs/",
+    "source_directory": "docs/source",
 }
