@@ -14,6 +14,10 @@ docs = [
     "sphinx-copybutton>=0.5.2",
     "myst_parser",
 ]
+tests = [
+    "pytest",
+    "pytest-cov",
+]
 
 [build-system]
 requires = ["setuptools>=65", "wheel"]
@@ -24,3 +28,11 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90

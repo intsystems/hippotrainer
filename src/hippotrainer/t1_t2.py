@@ -1,5 +1,5 @@
 import torch
-from .hyper_optimizer import HyperOptimizer
+from hippotrainer.hyper_optimizer import HyperOptimizer
 
 
 class T1T2(HyperOptimizer):
