@@ -10,7 +10,8 @@ docs = [
     "furo>=2024.1.29",
     "sphinx-copybutton>=0.5.2",
     "myst_parser",
-    "torch"
+    "torch",
+    "numpy"
 ]
 
 [build-system]
