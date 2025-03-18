@@ -133,8 +133,10 @@ input_dim = len(feature_names)
 num_classes = len(class_names)
 model = LogisticRegressionModel(input_dim, num_classes)
 num_epochs = 10
-theta = torch.tensor([1.0], requires_grad=True)
-lambd = theta.exp()
+# theta = torch.tensor([2.0], requires_grad=True)
+# lambd = theta.exp()
+
+lambd = torch.tensor([1.0], requires_grad=True)
 
 # Initialize the custom loss function
 criterion = LogisticRegressionLoss(model, lambd)
@@ -144,8 +146,8 @@ optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 # Initialize the hyper optimizer
 hyper_optimizer = T1T2(
-    hyperparams={"theta": theta},
-    hyper_lr=1e-3,
+    hyperparams={"lambd": lambd},
+    hyper_lr=1e-2,
     model=model,
     optimizer=optimizer,
     val_loader=val_loader,
