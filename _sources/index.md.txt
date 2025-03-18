@@ -14,7 +14,7 @@ usage
 ```
 
 ```{toctree}
-:caption: Development
+:caption: Documentation
 :hidden:
 
 modules
