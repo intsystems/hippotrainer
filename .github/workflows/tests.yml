@@ -26,7 +26,9 @@ jobs:
           pip install .[tests]
 
       - name: Run tests
-        run: pytest --cov --cov-config=pyproject.toml --cov-report=xml
+        run: |
+          coverage run -m pytest
+          coverage xml
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5

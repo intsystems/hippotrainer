@@ -16,8 +16,8 @@ docs = [
 ]
 tests = [
     "pytest",
-    "pytest-cov",
-    "scikit-learn"
+    "coverage",
+    "scikit-learn",
 ]
 
 [build-system]
