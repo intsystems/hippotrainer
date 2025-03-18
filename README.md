@@ -54,7 +54,8 @@
 2. [Technical Meeting 2 - Jupyter Notebook](https://github.com/intsystems/hippotrainer/blob/main/notebooks/basic_code.ipynb)
 3. [Technical Meeting 3 - Jupyter Notebook](https://github.com/intsystems/hippotrainer/blob/main/notebooks/demo.ipynb)
 4. [Documentation](https://intsystems.github.io/hippotrainer/)
-5. [Blog Post](https://kisnikser.github.io/projects/hippotrainer/)
+5. [Tests](https://github.com/intsystems/hippotrainer/tree/main/tests)
+6. [Blog Post](https://kisnikser.github.io/projects/hippotrainer/)
 
 ## 🚀 Features
 - **Algorithm Zoo**: T1-T2, Neumann, HOAG, DrMAD
