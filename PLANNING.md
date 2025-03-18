@@ -21,7 +21,7 @@ Our solution enables efficient gradient-based optimization of hyperparameters th
 
 In this project, we are going to implement the following algorithms:
 1. **T1-T2** ([Paper](http://proceedings.mlr.press/v48/luketina16.pdf)): One-step unrolled optimization
-2. **IFT** ([Paper](http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf)): Leveraging Neumann series approximation for implicit differentiation
+2. **Neumann** ([Paper](http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf)): Leveraging Neumann series approximation for implicit differentiation
 3. **HOAG** ([Paper](http://proceedings.mlr.press/v48/pedregosa16.pdf)): Implicit differentiation via conjugate gradient
 4. **DrMAD** ([Paper](https://arxiv.org/abs/1601.00917)): Memory-efficient piecewise-linear backpropagation
 
@@ -64,7 +64,7 @@ Thus we suppose the project to be done in the distributed manner, exhibiting the
 |      |             |                    | Andrey    | DrMAD checkpointing system, make simple test |
 | 5    | Mar 18   | **TM2** Mid-review | All       | Validate core functionality, drafty version of documentation, basic tests |
 | 6    | Mar 25   | API Finalization   | Igor      | Standardize optimizer interfaces |
-|      |             |                    | Nikita    | Implement IFT (million hyperparams) support, start blog-post writing |
+|      |             |                    | Nikita    | Implement Neumann (million hyperparams) support, start blog-post writing |
 | 7    | Apr 1     | Testing & Benchmarks| Andrey    | Implement core DrMAD functionality |
 |      |             |                    | Daniil    | Tests for HOAG implemented |
 | 8    | Apr 8    | **Checkpoint**     | All       | Documentation, examples, packaging, blog-post almost done |
