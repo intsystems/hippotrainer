@@ -201,10 +201,7 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Documentation</a></li>
 </ul>
 
 </div>
@@ -252,10 +249,51 @@
           <section id="hippotrainer">
 <h1>HippoTrainer<a class="headerlink" href="#hippotrainer" title="Link to this heading">¶</a></h1>
 <p>Gradient-Based Hyperparameter Optimization for PyTorch.</p>
+<p><strong>HippoTrainer</strong> is a PyTorch-compatible library for gradient-based hyperparameter optimization, implementing cutting-edge algorithms that leverage automatic differentiation to efficiently tune hyperparameters.</p>
+<section id="assets">
+<h2>📬 Assets<a class="headerlink" href="#assets" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/intsystems/hippotrainer/blob/main/assets/presentation.pdf">Technical Meeting 1 - Presentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intsystems/hippotrainer/blob/main/notebooks/basic_code.ipynb">Technical Meeting 2 - Jupyter Notebook</a></p></li>
+<li><p><a class="reference external" href="https://github.com/intsystems/hippotrainer/blob/main/notebooks/demo.ipynb">Technical Meeting 3 - Jupyter Notebook</a></p></li>
+<li><p><a class="reference external" href="https://intsystems.github.io/hippotrainer/">Documentation</a></p></li>
+<li><p><a class="reference external" href="https://kisnikser.github.io/projects/hippotrainer/">Blog Post</a></p></li>
+</ol>
+</section>
+<section id="features">
+<h2>🚀 Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Algorithm Zoo</strong>: T1-T2, Neumann, HOAG, DrMAD</p></li>
+<li><p><strong>PyTorch Native</strong>: Direct integration with <code class="docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p></li>
+<li><p><strong>Memory Efficient</strong>: Checkpointing &amp; implicit differentiation</p></li>
+<li><p><strong>Scalable</strong>: From laptop to cluster with PyTorch backend</p></li>
+</ul>
+</section>
+<section id="algorithms">
+<h2>📜 Algorithms<a class="headerlink" href="#algorithms" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>[x] <strong>T1-T2</strong> (<a class="reference external" href="http://proceedings.mlr.press/v48/luketina16.pdf">Paper</a>): One-step unrolled optimization</p></li>
+<li><p>[x] <strong>Neumann</strong> (<a class="reference external" href="http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf">Paper</a>): Leveraging Neumann series approximation for implicit differentiation</p></li>
+<li><p>[ ] <strong>HOAG</strong> (<a class="reference external" href="http://proceedings.mlr.press/v48/pedregosa16.pdf">Paper</a>): Implicit differentiation via conjugate gradient</p></li>
+<li><p>[ ] <strong>DrMAD</strong> (<a class="reference external" href="https://arxiv.org/abs/1601.00917">Paper</a>): Memory-efficient piecewise-linear backpropagation</p></li>
+</ul>
+</section>
+<section id="contributors">
+<h2>🤝 Contributors<a class="headerlink" href="#contributors" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/DorinDaniil">Daniil Dorin</a> (Basic code writing, Final demo, Algorithms)</p></li>
+<li><p><a class="reference external" href="https://github.com/ThunderstormXX">Igor Ignashin</a> (Project wrapping, Documentation writing, Algorithms)</p></li>
+<li><p><a class="reference external" href="https://github.com/kisnikser">Nikita Kiselev</a> (Project planning, Blog post, Algorithms)</p></li>
+<li><p><a class="reference external" href="https://github.com/Vepricov">Andrey Veprikov</a> (Tests writing, Documentation writing, Algorithms)</p></li>
+<li><p>We welcome contributions!</p></li>
+</ul>
+</section>
+<section id="license">
+<h2>📄 License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h2>
+<p>HippoTrainer is MIT licensed. See <a class="reference external" href="https://github.com/intsystems/hippotrainer/blob/main/LICENSE">LICENSE</a> for details.</p>
 <div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
-</div>
+</section>
 </section>
 
         </article>

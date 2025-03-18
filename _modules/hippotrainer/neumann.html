@@ -200,10 +200,7 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Documentation</a></li>
 </ul>
 
 </div>
@@ -248,6 +245,7 @@
 <span class="k">class</span><span class="w"> </span><span class="nc">Neumann</span><span class="p">(</span><span class="n">HyperOptimizer</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class that extends HyperOptimizer to use the Neumann series approximation for computing the inverse Hessian-vector product.</span>
+<span class="sd">    Implementation of http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        num_terms (int): Number of terms in the Neumann series approximation.</span>

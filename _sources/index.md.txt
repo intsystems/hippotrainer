@@ -6,16 +6,15 @@ hide-toc: true
 
 Gradient-Based Hyperparameter Optimization for PyTorch.
 
+```{include} ../../README.md
+:start-after: <!-- start docs-index -->
+:end-before: <!-- end docs-index -->
+```
+
 ```{toctree}
 :hidden:
 
 installation
 usage
-```
-
-```{toctree}
-:caption: Documentation
-:hidden:
-
 modules
 ```
