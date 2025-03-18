@@ -4,8 +4,6 @@ from torch.optim import Optimizer
 from collections.abc import Iterable
 from typing import Any, Union
 
-torch.autograd.set_detect_anomaly(True)
-
 
 class HyperOptimizer:
     def __init__(
