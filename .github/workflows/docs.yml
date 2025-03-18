@@ -8,6 +8,7 @@ on:
 
 jobs:
   build-and-deploy:
+    name: Build documentation and deploy on GitHub Pages
     runs-on: ubuntu-latest
     environment: github-pages
     permissions:

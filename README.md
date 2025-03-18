@@ -18,14 +18,14 @@
 </p>
 
 <p align="center">
-<!--     <a href="https://github.com/intsystems/hippotrainer/actions">
+    <a href="https://intsystems.github.io/hippotrainer/">
+        <img alt="Docs" src="https://github.com/intsystems/hippotrainer/actions/workflows/docs.yml/badge.svg">
+    </a>
+    <a href="https://intsystems.github.io/hippotrainer/">
         <img alt="Tests" src="https://github.com/intsystems/hippotrainer/actions/workflows/tests.yml/badge.svg">
     </a>
     <a href="https://codecov.io/gh/intsystems/hippotrainer">
         <img alt="Coverage" src="https://codecov.io/gh/intsystems/hippotrainer/branch/main/graph/badge.svg">
-    </a> -->
-    <a href="https://intsystems.github.io/hippotrainer/">
-        <img alt="Docs" src="https://github.com/intsystems/hippotrainer/actions/workflows/docs.yml/badge.svg">
     </a>
 </p>
 
