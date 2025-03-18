@@ -5,6 +5,7 @@ from .hyper_optimizer import HyperOptimizer
 class T1T2(HyperOptimizer):
     """
     A class that extends HyperOptimizer to compute hyperparameter gradients using a specific method.
+    Implementation of http://proceedings.mlr.press/v48/luketina16.pdf.
     """
 
     def __init__(self, *args, **kwargs):

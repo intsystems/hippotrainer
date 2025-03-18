@@ -44,6 +44,8 @@
     </a>
 </p>
 
+<!-- start docs-index -->
+
 **HippoTrainer** is a PyTorch-compatible library for gradient-based hyperparameter optimization, implementing cutting-edge algorithms that leverage automatic differentiation to efficiently tune hyperparameters.
 
 ## 📬 Assets
@@ -74,4 +76,6 @@
 - We welcome contributions!
 
 ## 📄 License
-HippoTrainer is MIT licensed. See [LICENSE](LICENSE) for details.
+HippoTrainer is MIT licensed. See [LICENSE](https://github.com/intsystems/hippotrainer/blob/main/LICENSE) for details.
+
+<!-- end docs-index -->

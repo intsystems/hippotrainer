@@ -5,6 +5,7 @@ from .hyper_optimizer import HyperOptimizer
 class Neumann(HyperOptimizer):
     """
     A class that extends HyperOptimizer to use the Neumann series approximation for computing the inverse Hessian-vector product.
+    Implementation of http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf.
 
     Attributes:
         num_terms (int): Number of terms in the Neumann series approximation.

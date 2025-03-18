@@ -1,5 +1,5 @@
-API documentation
-=================
+Documentation
+=============
 
 .. automodule:: hippotrainer
    :members:
