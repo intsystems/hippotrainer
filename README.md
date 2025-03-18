@@ -49,18 +49,19 @@
 ## 📬 Assets
 
 1. [Technical Meeting 1 - Presentation](https://github.com/intsystems/hippotrainer/blob/main/assets/presentation.pdf)
-2. [Documentation](https://intsystems.github.io/hippotrainer/)
-3. [Blog Post](https://kisnikser.github.io/projects/hippotrainer/)
+2. [Technical Meeting 2 - Jupyter Notebook](https://github.com/intsystems/hippotrainer/blob/main/notebooks/basic_code.ipynb)
+3. [Documentation](https://intsystems.github.io/hippotrainer/)
+4. [Blog Post](https://kisnikser.github.io/projects/hippotrainer/)
 
 ## 🚀 Features
-- **Algorithm Zoo**: T1-T2, IFT, HOAG, DrMAD
+- **Algorithm Zoo**: T1-T2, Neumann, HOAG, DrMAD
 - **PyTorch Native**: Direct integration with `torch.nn.Module`
 - **Memory Efficient**: Checkpointing & implicit differentiation
 - **Scalable**: From laptop to cluster with PyTorch backend
 
 ## 📜 Algorithms
 - [ ] **T1-T2** ([Paper](http://proceedings.mlr.press/v48/luketina16.pdf)): One-step unrolled optimization
-- [ ] **IFT** ([Paper](http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf)): Leveraging Neumann series approximation for implicit differentiation
+- [ ] **Neumann** ([Paper](http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf)): Leveraging Neumann series approximation for implicit differentiation
 - [ ] **HOAG** ([Paper](http://proceedings.mlr.press/v48/pedregosa16.pdf)): Implicit differentiation via conjugate gradient
 - [ ] **DrMAD** ([Paper](https://arxiv.org/abs/1601.00917)): Memory-efficient piecewise-linear backpropagation
 
