@@ -21,7 +21,7 @@
     <a href="https://intsystems.github.io/hippotrainer/">
         <img alt="Docs" src="https://github.com/intsystems/hippotrainer/actions/workflows/docs.yml/badge.svg">
     </a>
-    <a href="https://intsystems.github.io/hippotrainer/">
+    <a href="https://github.com/intsystems/hippotrainer/tree/main/tests">
         <img alt="Tests" src="https://github.com/intsystems/hippotrainer/actions/workflows/tests.yml/badge.svg">
     </a>
     <a href="https://codecov.io/gh/intsystems/hippotrainer">
