@@ -7,25 +7,20 @@ class Neumann(HyperOptimizer):
         self.num_terms = num_terms
         super().__init__(*args, **kwargs)
 
-    def approx_inverse_hvp(self, v, J):
+    def approx_inverse_hvp(self, v: tuple[torch.Tensor], f: tuple[torch.Tensor]):
         """Neumann approximation of inverse-Hessian-vector product."""
-        p = v.clone()
-        print("v.shape:", v.shape)
+        p = v
         for _ in range(self.num_terms):
-            # hvp = torch.autograd.functional.hvp(train_loss, self.model.parameters(), v)[0]
-            # hvp = torch.autograd.grad(f, self.model.parameters(), grad_outputs=v, retain_graph=True)[0]
-            hvp = torch.autograd.grad(J, self.model.parameters(), v)[0]
-            v = v - self.optimizer.defaults["lr"] * hvp
-            p = p + v
-        return self.optimizer.defaults["lr"] * p
+            grad = torch.autograd.grad(f, self.model.parameters(), grad_outputs=v, retain_graph=True)
+            v = [v_ - self.optimizer.defaults["lr"] * g for v_, g in zip(v, grad)]
+            p = [self.optimizer.defaults["lr"] * (p_ + v_) for p_, v_ in zip(p, v)]
+        return p
 
-    def hyper_grad(self, train_loss, val_loss, hyperparam):
-        v_1 = torch.autograd.grad(val_loss, self.model.parameters(), retain_graph=True)[0]
-        J = torch.autograd.grad(train_loss, self.model.parameters(), retain_graph=True)
-        print("J", J)
-        print("J[0]", J[0])
-        J = torch.cat([e.flatten for e in J])
-        v_2 = self.approx_inverse_hvp(v_1, train_loss)
-        v_3 = torch.autograd.grad(grad, hyperparam, grad_outputs=v_2)[0]
-        hyper_grad = torch.autograd.grad(val_loss, hyperparam)[0] - v_3
+    def hyper_grad(self, train_loss, val_loss):
+        v1 = torch.autograd.grad(val_loss, self.model.parameters(), retain_graph=True)
+        d_train_d_w = torch.autograd.grad(train_loss, self.model.parameters(), create_graph=True)
+        v2 = self.approx_inverse_hvp(v1, d_train_d_w)
+        v3 = torch.autograd.grad(d_train_d_w, self.hyperparams.values(), grad_outputs=v2, retain_graph=True)
+        d_val_d_lambda = torch.autograd.grad(val_loss, self.hyperparams.values(), retain_graph=True)
+        hyper_grad = [d - v for d, v in zip(d_val_d_lambda, v3)]
         return hyper_grad

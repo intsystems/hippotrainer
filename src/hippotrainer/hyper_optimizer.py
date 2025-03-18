@@ -13,6 +13,7 @@ class HyperOptimizer:
         inner_steps: int = 1,
         model: nn.Module = None,
         optimizer: Optimizer = None,
+        train_loader: Iterable[Any, Any] = None,
         val_loader: Iterable[Any, Any] = None,
         criterion: nn.Module = None,
     ):
@@ -21,6 +22,7 @@ class HyperOptimizer:
         self.inner_steps = inner_steps
         self.model = model
         self.optimizer = optimizer
+        self.train_loader = train_loader
         self.val_loader = val_loader
         self.criterion = criterion
 
@@ -39,6 +41,13 @@ class HyperOptimizer:
             hyperparam.grad.zero_()
 
     def evaluate(self):
+        self.model.train()
+        train_loss = 0.0
+        for inputs, outputs in self.train_loader:
+            preds = self.model(inputs)
+            loss = self.criterion(preds, outputs)
+            train_loss += loss
+        train_loss /= len(self.train_loader)
         self.model.eval()
         val_loss = 0.0
         for inputs, outputs in self.val_loader:
@@ -46,9 +55,9 @@ class HyperOptimizer:
             loss = self.criterion(preds, outputs)
             val_loss += loss
         val_loss /= len(self.val_loader)
-        return val_loss
+        return train_loss, val_loss
 
-    def hyper_grad(self, train_loss, val_loss: torch.Tensor, hyperparam: torch.Tensor):
+    def hyper_grad(self, train_loss: torch.Tensor, val_loss: torch.Tensor):
         raise NotImplementedError
 
     def step(self, train_loss):
@@ -60,7 +69,7 @@ class HyperOptimizer:
             self._hyperparams_requires_grad_(False)
 
     def hyper_step(self, train_loss):
-        val_loss = self.evaluate()
-        for name, hyperparam in self.hyperparams.items():
-            hyper_grad = self.hyper_grad(train_loss, val_loss, hyperparam)
-            hyperparam.data -= self.hyper_lr * hyper_grad
+        train_loss, val_loss = self.evaluate()
+        hyper_grad = self.hyper_grad(train_loss, val_loss)
+        for hyperparam, hyperparam_grad in zip(self.hyperparams.values(), hyper_grad):
+            hyperparam.data -= self.hyper_lr * hyperparam_grad
