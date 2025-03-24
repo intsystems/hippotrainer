@@ -127,27 +127,19 @@ class HyperTrainer:
 
 
 from hippotrainer import T1T2
+from hippotrainer import NoHyperOptimizer
+
+
+lambd = torch.tensor([1.0])
 
 # Usage example
 input_dim = len(feature_names)
 num_classes = len(class_names)
 model = LogisticRegressionModel(input_dim, num_classes)
 num_epochs = 10
-# theta = torch.tensor([2.0], requires_grad=True)
-# lambd = theta.exp()
 
-lambd = torch.tensor([1.0], requires_grad=True)
-
-# Initialize the custom loss function
 criterion = LogisticRegressionLoss(model, lambd)
-  
-
-
-  
-# Initialize the optimizer
 optimizer = optim.SGD(model.parameters(), lr=0.01)
-
-# Initialize the hyper optimizer
 hyper_optimizer = T1T2(
     hyperparams={"lambd": lambd},
     hyper_lr=1e-2,
@@ -156,22 +148,45 @@ hyper_optimizer = T1T2(
     val_loader=val_loader,
     criterion=criterion,
 )
-
 # Initialize the trainer
 trainer = HyperTrainer(num_epochs, model, criterion, train_loader, hyper_optimizer)
 
-# Train the model
 torch.autograd.set_detect_anomaly(True)
 trainer.train()
 
 # Evaluate the model
 final_val_loss = hyper_optimizer.evaluate()
-print(f"Final Validation Loss: {final_val_loss.item():.4f}")
+print(f"Final Validation Loss after hyperoptimization: {final_val_loss.item():.4f}")
+
+model = LogisticRegressionModel(input_dim, num_classes)
+num_epochs = 10
+lambd = torch.tensor([1.0])
+criterion = LogisticRegressionLoss(model, lambd)
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+no_hyper_optimizer = NoHyperOptimizer(
+    hyperparams={"lambd": lambd},
+    hyper_lr=1e-2,
+    model=model,
+    optimizer=optimizer,
+    val_loader=val_loader,
+    criterion=criterion,
+)
+no_trainer = HyperTrainer(num_epochs, model, criterion, train_loader, no_hyper_optimizer)
+torch.autograd.set_detect_anomaly(True)
+no_trainer.train()
+
+# Evaluate the model
+final_val_loss = no_hyper_optimizer.evaluate()
+print(f"Final Validation Loss default: {final_val_loss.item():.4f}")
 
 # Plot the hyperparameter changing
 for name, hyperparam_values in trainer.hyperparams_history.items():
-    steps = list(range(len(hyperparam_values)))
-    plt.plot(steps, hyperparam_values, marker="o")
+                                                               
+    no_steps = list(range(len(no_trainer.hyperparams_history[name])))
+    steps = list(range(len(trainer.hyperparams_history[name])))
+    plt.plot(steps, hyperparam_values, marker="o", label = 'training hyperparam')
+    plt.plot(no_steps, no_trainer.hyperparams_history[name], marker="o", label = 'fixed hyperparam')
+    plt.legend()
     plt.xlabel("Steps")
     plt.ylabel(f"Hyperparameter {name} Value")
     plt.title(f"Change of Hyperparameter {name} over Steps")
