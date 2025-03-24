@@ -140,7 +140,10 @@ lambd = torch.tensor([1.0], requires_grad=True)
 
 # Initialize the custom loss function
 criterion = LogisticRegressionLoss(model, lambd)
+  
 
+
+  
 # Initialize the optimizer
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
