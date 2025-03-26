@@ -8,6 +8,9 @@
         <title>hippotrainer.t1_t2 - HippoTrainer</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     
     
@@ -200,7 +203,14 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Documentation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../hippotrainer/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/hyper_optimizer.html">HyperOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/t1_t2.html">T1-T2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/neumann.html">Neumann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/hoag.html">HOAG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/drmad.html">DrMAD</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -241,13 +251,15 @@
 
 
 <div class="viewcode-block" id="T1T2">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.T1T2">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/t1_t2.html#hippotrainer.t1_t2.T1T2">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">T1T2</span><span class="p">(</span><span class="n">HyperOptimizer</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class that extends HyperOptimizer to compute hyperparameter gradients using a specific method.</span>
 <span class="sd">    Implementation of http://proceedings.mlr.press/v48/luketina16.pdf.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+<div class="viewcode-block" id="T1T2.__init__">
+<a class="viewcode-back" href="../../hippotrainer/t1_t2.html#hippotrainer.t1_t2.T1T2.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize the T1T2 optimizer.</span>
@@ -256,10 +268,11 @@
 <span class="sd">            *args: Variable length argument list for the parent class.</span>
 <span class="sd">            **kwargs: Arbitrary keyword arguments for the parent class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="T1T2.hyper_grad">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.T1T2.hyper_grad">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/t1_t2.html#hippotrainer.t1_t2.T1T2.hyper_grad">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">hyper_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the hyperparameter gradients using the gradients of the training and validation losses.</span>
@@ -322,5 +335,9 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     </body>
 </html>

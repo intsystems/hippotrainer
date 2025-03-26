@@ -2,10 +2,11 @@
 <html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="DrMAD" href="drmad.html" /><link rel="prev" title="Neumann" href="neumann.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Overview: module code - HippoTrainer</title>
+        <title>HOAG - HippoTrainer</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -200,15 +201,15 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../hippotrainer/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/hyper_optimizer.html">HyperOptimizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/t1_t2.html">T1-T2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/neumann.html">Neumann</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/hoag.html">HOAG</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/drmad.html">DrMAD</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hyper_optimizer.html">HyperOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="t1_t2.html">T1-T2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neumann.html">Neumann</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">HOAG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drmad.html">DrMAD</a></li>
 </ul>
 </li>
 </ul>
@@ -230,7 +231,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/intsystems/hippotrainer/blob/main/docs/source/hippotrainer/hoag.md?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/intsystems/hippotrainer/edit/main/docs/source/hippotrainer/hoag.md" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -245,18 +256,44 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <h1>All modules for which code is available</h1>
-<ul><li><a href="hippotrainer/hyper_optimizer.html">hippotrainer.hyper_optimizer</a></li>
-<li><a href="hippotrainer/neumann.html">hippotrainer.neumann</a></li>
-<li><a href="hippotrainer/t1_t2.html">hippotrainer.t1_t2</a></li>
-</ul>
+          <section id="hoag">
+<h1>HOAG<a class="headerlink" href="#hoag" title="Link to this heading">¶</a></h1>
+<p>This method solves the linear system using the Conjugate Gradient to invert the Hessian approximately. The following system is solved:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\nabla^2_{\mathbf{w}} \mathcal{L}_{\text{train}}(\mathbf{w}_T, \boldsymbol{\lambda}) \cdot \mathbf{z} = \nabla_{\boldsymbol{\lambda}} \mathcal{L}_{\text{val}}(\mathbf{w}_T, \boldsymbol{\lambda}).\]</div>
+</div>
+<!-- ```{eval-rst}
+.. automodule:: hippotrainer.hoag
+   :members:
+   :undoc-members:
+``` --></section>
+
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="drmad.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">DrMAD</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="neumann.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Neumann</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -296,5 +333,6 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/tabs.js?v=3ee01567"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

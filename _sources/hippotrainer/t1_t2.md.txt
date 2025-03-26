@@ -1,0 +1,12 @@
+# T1-T2
+
+In this method, the number of terms in Neumann series approximation equals 0, and the number of inner optimization steps 1. Therefore, this method is also named Greedy gradient-based hyperparameter optimization. In particular, here we have:
+```{math}
+  \left[ \nabla^2_{\mathbf{w}} \mathcal{L}_{\text{train}}(\mathbf{w}_T, \boldsymbol{\lambda}) \right]^{-1} \approx \mathbf{I}.
+```
+
+```{eval-rst}
+.. automodule:: hippotrainer.t1_t2
+   :members:
+   :undoc-members:
+```

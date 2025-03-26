@@ -8,6 +8,9 @@
         <title>hippotrainer.hyper_optimizer - HippoTrainer</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
     
     
@@ -200,7 +203,14 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Documentation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../hippotrainer/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/hyper_optimizer.html">HyperOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/t1_t2.html">T1-T2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/neumann.html">Neumann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/hoag.html">HOAG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hippotrainer/drmad.html">DrMAD</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -244,7 +254,7 @@
 
 
 <div class="viewcode-block" id="HyperOptimizer">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.HyperOptimizer">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">HyperOptimizer</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class for optimizing hyperparameters in a machine learning model using gradient-based methods.</span>
@@ -261,6 +271,8 @@
 <span class="sd">        step_count (int): Counter for the number of optimization steps taken.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+<div class="viewcode-block" id="HyperOptimizer.__init__">
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">hyperparams</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">],</span>
@@ -295,7 +307,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span> <span class="o">=</span> <span class="n">criterion</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">step_count</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_hyperparams_requires_grad_</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hyperparams_requires_grad_</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div>
+
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_hyperparams_requires_grad_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">requires_grad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -308,7 +321,7 @@
             <span class="n">hyperparam</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="n">requires_grad</span><span class="p">)</span>
 
 <div class="viewcode-block" id="HyperOptimizer.zero_grad">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.HyperOptimizer.zero_grad">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer.zero_grad">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">zero_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Zero the gradients of the optimizer.</span>
@@ -317,7 +330,7 @@
 
 
 <div class="viewcode-block" id="HyperOptimizer.zero_hyper_grad">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.HyperOptimizer.zero_hyper_grad">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer.zero_hyper_grad">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">zero_hyper_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Zero the gradients of the hyperparameters.</span>
@@ -327,7 +340,7 @@
 
 
 <div class="viewcode-block" id="HyperOptimizer.evaluate">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.HyperOptimizer.evaluate">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer.evaluate">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Evaluate the model on the training and validation datasets.</span>
@@ -355,7 +368,7 @@
 
 
 <div class="viewcode-block" id="HyperOptimizer.hyper_grad">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.HyperOptimizer.hyper_grad">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer.hyper_grad">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">hyper_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the gradients of the hyperparameters with respect to the validation loss.</span>
@@ -371,7 +384,7 @@
 
 
 <div class="viewcode-block" id="HyperOptimizer.step">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.HyperOptimizer.step">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer.step">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform an optimization step and update hyperparameters if necessary.</span>
@@ -388,7 +401,7 @@
 
 
 <div class="viewcode-block" id="HyperOptimizer.hyper_step">
-<a class="viewcode-back" href="../../modules.html#hippotrainer.HyperOptimizer.hyper_step">[docs]</a>
+<a class="viewcode-back" href="../../hippotrainer/hyper_optimizer.html#hippotrainer.hyper_optimizer.HyperOptimizer.hyper_step">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">hyper_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update the hyperparameters based on the computed gradients.</span>
@@ -445,5 +458,9 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     </body>
 </html>

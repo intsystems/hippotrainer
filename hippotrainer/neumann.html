@@ -2,10 +2,11 @@
 <html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="HOAG" href="hoag.html" /><link rel="prev" title="T1-T2" href="t1_t2.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Overview: module code - HippoTrainer</title>
+        <title>Neumann - HippoTrainer</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -180,7 +181,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -200,15 +201,15 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../hippotrainer/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/hyper_optimizer.html">HyperOptimizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/t1_t2.html">T1-T2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/neumann.html">Neumann</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/hoag.html">HOAG</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hippotrainer/drmad.html">DrMAD</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hyper_optimizer.html">HyperOptimizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="t1_t2.html">T1-T2</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Neumann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hoag.html">HOAG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drmad.html">DrMAD</a></li>
 </ul>
 </li>
 </ul>
@@ -230,7 +231,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/intsystems/hippotrainer/blob/main/docs/source/hippotrainer/neumann.md?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/intsystems/hippotrainer/edit/main/docs/source/hippotrainer/neumann.md" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -239,24 +250,119 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <h1>All modules for which code is available</h1>
-<ul><li><a href="hippotrainer/hyper_optimizer.html">hippotrainer.hyper_optimizer</a></li>
-<li><a href="hippotrainer/neumann.html">hippotrainer.neumann</a></li>
-<li><a href="hippotrainer/t1_t2.html">hippotrainer.t1_t2</a></li>
+          <section id="neumann">
+<h1>Neumann<a class="headerlink" href="#neumann" title="Link to this heading">¶</a></h1>
+<p>This method uses a pre-determined number of terms in the Neumann series.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[  \left[ \nabla^2_{\mathbf{w}} \mathcal{L}_{\text{train}}(\mathbf{w}_T, \boldsymbol{\lambda}) \right]^{-1} \approx \sum_{j=0}^{i} \left[ \mathbf{I} - \nabla^2_{\mathbf{w}} \mathcal{L}_{\text{train}} (\mathbf{w}_T, \boldsymbol{\lambda}) \right]^j.\]</div>
+</div>
+<dl class="py class" id="module-hippotrainer.neumann">
+<dt class="sig sig-object py" id="hippotrainer.neumann.Neumann">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hippotrainer.neumann.</span></span><span class="sig-name descname"><span class="pre">Neumann</span></span><a class="reference internal" href="../_modules/hippotrainer/neumann.html#Neumann"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hippotrainer.neumann.Neumann" title="Link to this definition">¶</a></dt>
+<dd><p>A class that extends HyperOptimizer to use the Neumann series approximation for computing the inverse Hessian-vector product.
+Implementation of <a class="reference external" href="http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf">http://proceedings.mlr.press/v108/lorraine20a/lorraine20a.pdf</a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hippotrainer.neumann.Neumann.num_terms">
+<span class="sig-name descname"><span class="pre">num_terms</span></span><a class="headerlink" href="#hippotrainer.neumann.Neumann.num_terms" title="Link to this definition">¶</a></dt>
+<dd><p>Number of terms in the Neumann series approximation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hippotrainer.neumann.Neumann.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_terms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hippotrainer/neumann.html#Neumann.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hippotrainer.neumann.Neumann.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize the Neumann optimizer with the number of terms for the Neumann series approximation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_terms</strong> (<em>int</em>) – Number of terms in the Neumann series approximation.</p></li>
+<li><p><strong>*args</strong> – Variable length argument list for the parent class.</p></li>
+<li><p><strong>**kwargs</strong> – Arbitrary keyword arguments for the parent class.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hippotrainer.neumann.Neumann.approx_inverse_hvp">
+<span class="sig-name descname"><span class="pre">approx_inverse_hvp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hippotrainer/neumann.html#Neumann.approx_inverse_hvp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hippotrainer.neumann.Neumann.approx_inverse_hvp" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the Neumann approximation of the inverse Hessian-vector product.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> (<em>tuple</em><em> of </em><em>torch.Tensor</em>) – Vector to multiply with the inverse Hessian.</p></li>
+<li><p><strong>f</strong> (<em>tuple</em><em> of </em><em>torch.Tensor</em>) – Function outputs used for computing gradients.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Approximation of the inverse Hessian-vector product.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hippotrainer.neumann.Neumann.hyper_grad">
+<span class="sig-name descname"><span class="pre">hyper_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_loss</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hippotrainer/neumann.html#Neumann.hyper_grad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hippotrainer.neumann.Neumann.hyper_grad" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the hyperparameter gradients using the Neumann approximation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_loss</strong> (<em>torch.Tensor</em>) – Training loss.</p></li>
+<li><p><strong>val_loss</strong> (<em>torch.Tensor</em>) – Validation loss.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Hyperparameter gradients.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="hoag.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">HOAG</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="t1_t2.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">T1-T2</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -282,8 +388,33 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Neumann</a><ul>
+<li><a class="reference internal" href="#hippotrainer.neumann.Neumann"><code class="docutils literal notranslate"><span class="pre">Neumann</span></code></a><ul>
+<li><a class="reference internal" href="#hippotrainer.neumann.Neumann.num_terms"><code class="docutils literal notranslate"><span class="pre">Neumann.num_terms</span></code></a></li>
+<li><a class="reference internal" href="#hippotrainer.neumann.Neumann.__init__"><code class="docutils literal notranslate"><span class="pre">Neumann.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#hippotrainer.neumann.Neumann.approx_inverse_hvp"><code class="docutils literal notranslate"><span class="pre">Neumann.approx_inverse_hvp()</span></code></a></li>
+<li><a class="reference internal" href="#hippotrainer.neumann.Neumann.hyper_grad"><code class="docutils literal notranslate"><span class="pre">Neumann.hyper_grad()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -296,5 +427,6 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/tabs.js?v=3ee01567"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
