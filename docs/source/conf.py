@@ -9,11 +9,30 @@ author = "Daniil Dorin, Igor Ignashin, Nikita Kiselev, Andrey Veprikov"
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.extlinks",
+    "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
     "sphinx.ext.napoleon",
     "sphinx.ext.githubpages",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.todo",
+    "sphinx_copybutton",
+    "sphinx_design",
+    "sphinx_inline_tabs",
+    "sphinx_toolbox.latex",
     "myst_parser",
 ]
+
+autodoc_member_order = "bysource"
+autodoc_preserve_defaults = True
+autodoc_typehints = "description"
+autodoc_class_signature = "separated"
+
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+]
+myst_heading_anchors = 3
 
 html_theme = "furo"
 html_title = project
@@ -22,7 +41,7 @@ language = "en"
 html_static_path = ["_static"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
-html_theme_options: Dict[str, Any] = {
+html_theme_options = {
     "footer_icons": [
         {
             "name": "GitHub",
