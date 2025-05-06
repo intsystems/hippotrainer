@@ -181,7 +181,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -250,7 +250,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -258,7 +258,41 @@
         <article role="main" id="furo-main-content">
           <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
-<p>TODO</p>
+<p>You can use our library to tune almost all (see below) hyperparameters in your own code.
+The <code class="docutils literal notranslate"><span class="pre">HyperOptimizer</span></code> interface is very similar to <a class="reference external" href="https://pytorch.org/docs/2.6/optim.html#torch.optim.Optimizer"><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code></a> from <code class="docutils literal notranslate"><span class="pre">PyTorch</span></code>.</p>
+<p>It supports key functionalities:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code> to do an optimization step over parameters (or hyperparameters, see below)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zero_grad</span></code> to zero out the parameters gradients (same as <code class="docutils literal notranslate"><span class="pre">optimizer.zero_grad()</span></code>)</p></li>
+</ol>
+<p>We provide demo experiments with each implemented method in <a class="reference external" href="https://github.com/intsystems/hippotrainer/blob/main/notebooks/demo.ipynb">this notebook</a>.
+They works as follows:</p>
+<ol class="arabic simple">
+<li><p>Get next batch from train dataloader</p></li>
+<li><p>Forward and backward on calculated loss</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hyper_optimizer.step(loss)</span></code> do model parameters step and (if inner steps were accumulated) hyperparameters step (calculate hypergradients, do the optimization step, zeroes hypergradients)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hyper_optimizer.zero_grad()</span></code> zeroes the model parameters gradients (same as <code class="docutils literal notranslate"><span class="pre">optimizer.zero_grad()</span></code>)</p></li>
+</ol>
+<section id="optimizer-vs-hyperoptimizer-method-step">
+<h2><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code> vs. <code class="docutils literal notranslate"><span class="pre">HyperOptimizer</span></code> method <code class="docutils literal notranslate"><span class="pre">step</span></code><a class="headerlink" href="#optimizer-vs-hyperoptimizer-method-step" title="Link to this heading">¶</a></h2>
+<p>Gradient-based hyperparameters optimization involves hyper-optimization steps during the
+model parameters optimization. Thus, we combine <code class="docutils literal notranslate"><span class="pre">Optimizer</span></code> method <code class="docutils literal notranslate"><span class="pre">step</span></code> with <code class="docutils literal notranslate"><span class="pre">inner_steps</span></code>,
+defined by each method.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">T1T2</span></code> do NOT use any inner steps, therefore optimization over parameters
+and hyperparameters is done step by step. But <code class="docutils literal notranslate"><span class="pre">Neumann</span></code> method do some inner optimization steps
+over model parameters before it do the hyperstep.</p>
+<p>See more details <a class="reference external" href="https://github.com/intsystems/hippotrainer/blob/60cbafd6614bf057e83268da6cebf04ae2e6d7e7/src/hippotrainer/hyper_optimizer.py#L121">here</a>.</p>
+</section>
+<section id="supported-hyperparameters-types">
+<h2>Supported hyperparameters types<a class="headerlink" href="#supported-hyperparameters-types" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">HyperOptimizer</span></code> logic is well-suited for almost all <strong>CONTINUOUS</strong> (required for gradient-based methods) hyperparameters types:</p>
+<ol class="arabic simple">
+<li><p>Model hyperparameters (e.g., gate coefficients)</p></li>
+<li><p>Loss hyperparameters (e.g., L1/L2-regularization)</p></li>
+</ol>
+<p>However, it currently does <strong>not</strong> support (or support, but actually was not sufficiently tested) <strong>learning rate tuning</strong>.
+We plan to improve our functionality in future releases, stay tuned!</p>
+</section>
 </section>
 
         </article>
@@ -311,8 +345,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Usage</a><ul>
+<li><a class="reference internal" href="#optimizer-vs-hyperoptimizer-method-step"><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code> vs. <code class="docutils literal notranslate"><span class="pre">HyperOptimizer</span></code> method <code class="docutils literal notranslate"><span class="pre">step</span></code></a></li>
+<li><a class="reference internal" href="#supported-hyperparameters-types">Supported hyperparameters types</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
